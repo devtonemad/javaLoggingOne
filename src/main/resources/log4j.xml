@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="target" value="System.err"/>
+        <param name="immediateFlush" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <param name="threshold" value="warn"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="XML %-7p %d [%t] %c %x - %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="org.example.content.Content">
+        <level value="debug"/>
+        <appender-ref ref="console"/>
+    </logger>
+
+    <root>
+        <priority value ="debug" />
+        <appender-ref ref="console"/>
+    </root>
+
+</log4j:configuration>
